@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 import { useAuth } from "../../contexts/AuthContext";
+import auth from "../../config/firebase";
 import catLogo from "../../assets/cat.png";
 
 export default function Navbar() {
@@ -14,12 +15,26 @@ export default function Navbar() {
     { label: "bruh", link: "/bruh" },
   ];
 
- /*  useEffect(() => {
-    console.log(currentUser)
-    if (currentUser) {
-      pages.push({ label: "Profile", link: "/profile" });
-    }
-  }, [currentUser]); */
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = currentUser && (await currentUser.getIdToken());
+
+        const payloadHeader = {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const res = await fetch("http://localhost:3001", payloadHeader);
+        console.log(await res.text());
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -45,17 +60,17 @@ export default function Navbar() {
             ))}
             <Grid item md={8}>
               {!currentUser ? (
-              <Link to="/login" key={"Login"}>
-                <button className="navBarMenuItem navBarProfile">
-                  <Typography variant="h5">Log in</Typography>
-                </button>
-              </Link>
+                <Link to="/login" key={"Login"}>
+                  <button className="navBarMenuItem navBarProfile">
+                    <Typography variant="h5">Log in</Typography>
+                  </button>
+                </Link>
               ) : (
                 <Link to="/profile" key={"Profile"}>
-                <button className="navBarMenuItem navBarProfile">
-                  <Typography variant="h5">Profile</Typography>
-                </button>
-              </Link>
+                  <button className="navBarMenuItem navBarProfile">
+                    <Typography variant="h5">Profile</Typography>
+                  </button>
+                </Link>
               )}
             </Grid>
           </Toolbar>
