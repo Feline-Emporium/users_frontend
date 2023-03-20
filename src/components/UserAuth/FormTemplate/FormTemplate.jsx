@@ -1,33 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Typography, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./FormTemplate.css";
 
-import Login from "./HandleSubmit/Login";
-import Register from "./HandleSubmit/Register";
+import { useAuth } from "../../../contexts/AuthContext";
 
 export default function FormTemplate(props) {
   const { title, type } = props;
   const navigate = useNavigate();
+  const { currentUser, register, login } = useAuth();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/");
+    }
+  }, [currentUser, navigate]);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = () => {
-    switch (type) {
-      case "login":
-        Login(email, password).then(() => {
-          navigate("/profile");
-        });
-        break;
-      case "register":
-        Register(email, password).then(() => {
-          navigate("/login");
-        });
-        break;
-      default:
-        throw new Error("Invalid type");
+  async function handleSubmit() {
+    try {
+      setLoading(true);
+      switch (type) {
+        case "login":
+          login(email, password);
+          break;
+
+        case "register":
+          register(email, password);
+          console.log(currentUser);
+          break;
+
+        default:
+          throw new Error("Invalid type");
+      }
+    } catch (e) {
+      alert("Failed to register");
     }
-  };
+    setLoading(false);
+  }
 
   return (
     <div className="formTemplateContainer">

@@ -3,13 +3,14 @@ import catLogo from "../../assets/cat.png";
 import "./HomePage.css";
 import { Typography } from "@mui/material";
 
+import { useAuth } from "../../contexts/AuthContext";
 import CatFact from "./CatFact/CatFact";
 
 export default function HomePage() {
-  const [count, setCount] = useState(0);
-  const [catFact, setCatFact] = useState("");
-
-  useEffect(() => {}, []);
+  const { currentUser } = useAuth();
+  useEffect(() => {
+    console.log(currentUser);
+  }, []);
 
   return (
     <div className="homePageContainer">
