@@ -18,7 +18,7 @@ export default function HomePage() {
         <img src={catLogo} className="logo" alt="Cat Logo" />
       </a>
       <Typography variant="h3">Welcome to One-Stop CatShop</Typography>
-      <Typography variant="h4">Your portal for everything cat!</Typography>
+      <Typography variant="h4">Your portal for everything catty!</Typography>
       <div>
         <CatFact />
       </div>
