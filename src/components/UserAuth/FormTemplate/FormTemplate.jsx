@@ -68,6 +68,7 @@ export default function FormTemplate(props) {
       >
         Log in
       </Button>
+      {loading && <p>Loading...</p>}
     </div>
   );
 }
