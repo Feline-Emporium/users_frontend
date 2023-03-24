@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { AppBar, Grid, Toolbar, Typography, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import PostPage from "../PostPage/PostPage";
+import meow from "../../assets/mp3/meow.mp3";
+import meownibba from "../../assets/mp3/meownibba.mp3";
 
 import { useAuth } from "../../contexts/AuthContext";
 import auth from "../../config/firebase";
@@ -14,6 +17,16 @@ export default function Navbar() {
     { label: "Post", link: "/post" },
     { label: "bruh", link: "/bruh" },
   ];
+
+  const playMeowSound = () => {
+    const audio = new Audio(meow);
+    audio.play();
+  };
+
+  const playMeowSoundDeep = () => {
+    const audio = new Audio(meownibba);
+    audio.play();
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,7 +56,10 @@ export default function Navbar() {
           <Toolbar>
             <Grid item md={4}>
               <Link to="/" key={"Logo"}>
-                <button className="navBarMenuItem navBarHome">
+                <button
+                  className="navBarMenuItem navBarHome"
+                  onClick={playMeowSound}
+                >
                   <img src={catLogo} className="navBarLogo" alt="Cat Logo" />
                   <Typography variant="h5">Home</Typography>
                 </button>
@@ -67,7 +83,10 @@ export default function Navbar() {
                 </Link>
               ) : (
                 <Link to="/profile" key={"Profile"}>
-                  <button className="navBarMenuItem navBarProfile">
+                  <button
+                    className="navBarMenuItem navBarProfile"
+                    onClick={playMeowSoundDeep}
+                  >
                     <Typography variant="h5">Profile</Typography>
                   </button>
                 </Link>
