@@ -45,29 +45,33 @@ export default function FormTemplate(props) {
   return (
     <div className="formTemplateContainer">
       <Typography variant="h4">{title}</Typography>
-      <TextField
-        label={"Email..."}
-        type={"email"}
-        variant="outlined"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <br />
-      <TextField
-        label={"Password..."}
-        type={"password"}
-        variant="outlined"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <br />
-      <Button
-        variant="contained"
-        className="formButton"
-        onClick={() => handleSubmit()}
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          handleSubmit();
+        }}
       >
-        Log in
-      </Button>
+        <TextField
+          label={"Email..."}
+          type={"email"}
+          variant="outlined"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <br />
+        <br />
+        <TextField
+          label={"Password..."}
+          type={"password"}
+          variant="outlined"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <br />
+        <Button type="submit" variant="contained" className="formButton">
+          Log in
+        </Button>
+      </form>
+
       {loading && <p>Loading...</p>}
     </div>
   );
