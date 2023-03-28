@@ -29,7 +29,8 @@ function CatListPage() {
               <p>Id: {cat.id}</p>
               <button
                 className="delete-button"
-                onClick={() => deleteCat(cat.id)}
+                //onClick={() => deleteCat(cat.id)}
+                onClick={() => console.log("Kitty was deleted!")}
               >
                 Delete
               </button>

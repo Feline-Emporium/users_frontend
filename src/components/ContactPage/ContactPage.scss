@@ -1,3 +1,7 @@
+.contactpage {
+  margin-top: 0%;
+}
+
 .phone {
   display: flex;
   align-items: center;
@@ -16,4 +20,29 @@
 
 .email h3 {
   margin-left: 5%;
+}
+
+.shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop h3 {
+  margin-left: 5%;
+}
+.disclaimer {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  font-size: 0.6rem;
+  font-weight: 200;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0.5%;
+  right: 1%;
+  font-style: italic;
 }

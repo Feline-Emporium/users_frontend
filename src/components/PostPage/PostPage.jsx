@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./PostPage.scss";
+import sellcat from "../../assets/mp3/sellcat.mp3";
 
 function PostPage() {
   const [name, setName] = useState("");
@@ -9,9 +10,37 @@ function PostPage() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
+  const sellkitty = () => {
+    const audio = new Audio(sellcat);
+    audio.play();
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // Do something with the form data, such as sending it to a server or updating state in a parent component
+  };
+
+  const handleSellCat = () => {
+    console.log(
+      "Name:",
+      name,
+      "Breed:",
+      breed,
+      "Gender:",
+      gender,
+      "Age:",
+      age,
+      "Price:",
+      price,
+      "Description:",
+      description
+    );
+    setName("");
+    setBreed("");
+    setGender("");
+    setAge("");
+    setPrice("");
+    setDescription("");
   };
 
   return (
@@ -83,7 +112,14 @@ function PostPage() {
           onChange={(event) => setDescription(event.target.value)}
         />
       </div>
-      <button type="submit" className="form-submit">
+      <button
+        type="submit"
+        className="form-submit"
+        onClick={() => {
+          sellkitty();
+          handleSellCat();
+        }}
+      >
         Sell Cat
       </button>
     </form>

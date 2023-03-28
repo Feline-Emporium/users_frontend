@@ -11,7 +11,7 @@ import RegisterPage from "./components/UserAuth/RegisterPage";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import PostPage from "./components/PostPage/PostPage";
 import { ContactPage } from "./components/ContactPage";
-import { CatListPage } from "./components/CatListPage";
+import CatListPage from "./components/CatListPage";
 
 function App() {
   return (
@@ -21,7 +21,6 @@ function App() {
           <NavBar />
           <Container maxWidth="md">
             <Routes>
-              <Route path="*" element={<ErrorPage />} />
               <Route path="/" element={<StartPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
@@ -29,6 +28,7 @@ function App() {
               <Route path="/post" element={<PostPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/catlist" element={<CatListPage />} />
+              <Route path="/*" element={<ErrorPage />} />
             </Routes>
           </Container>
         </div>

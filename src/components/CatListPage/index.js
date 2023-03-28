@@ -1,1 +1,1 @@
-export { default as CatListPage } from "./CatListPage";
+export { default } from "./CatListPage";
