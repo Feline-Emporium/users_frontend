@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { AppBar, Grid, Toolbar, Typography, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import PostPage from "../PostPage/PostPage";
 import meow from "../../assets/mp3/meow.mp3";
 import meownibba from "../../assets/mp3/meownibba.mp3";
 
@@ -13,9 +12,9 @@ import catLogo from "../../assets/cat.png";
 export default function Navbar() {
   const { currentUser } = useAuth();
   const pages = [
-    { label: "Cat List", link: "/cats" },
+    { label: "Cat List", link: "/catlist" },
     { label: "Post", link: "/post" },
-    { label: "bruh", link: "/bruh" },
+    { label: "Contact", link: "/contact" },
   ];
 
   const playMeowSound = () => {

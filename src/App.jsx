@@ -10,6 +10,8 @@ import LoginPage from "./components/UserAuth/LoginPage";
 import RegisterPage from "./components/UserAuth/RegisterPage";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import PostPage from "./components/PostPage/PostPage";
+import { ContactPage } from "./components/ContactPage";
+import { CatListPage } from "./components/CatListPage";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/post" element={<PostPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/catlist" element={<CatListPage />} />
             </Routes>
           </Container>
         </div>

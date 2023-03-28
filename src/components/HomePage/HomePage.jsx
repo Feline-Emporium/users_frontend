@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import catLogo from "../../assets/cat.png";
 import "./HomePage.css";
 import { Typography } from "@mui/material";
+import CookieConsentForm from "./CookieConsentForm";
 
 import { useAuth } from "../../contexts/AuthContext";
 import CatFact from "./CatFact/CatFact";
@@ -14,6 +15,7 @@ export default function HomePage() {
 
   return (
     <div className="homePageContainer">
+      <CookieConsentForm />
       <a target="_blank">
         <img src={catLogo} className="logo" alt="Cat Logo" />
       </a>

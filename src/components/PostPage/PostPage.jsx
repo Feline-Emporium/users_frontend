@@ -1,122 +1,93 @@
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
-import moment from "moment";
 import "./PostPage.scss";
 
-const PostPage = () => {
-  const state = useLocation().state;
-  const [value, setValue] = useState(state?.title || "");
-  const [title, setTitle] = useState(state?.desc || "");
-  const [file, setFile] = useState(null);
-  const [cat, setCat] = useState(state?.cat || "");
+function PostPage() {
+  const [name, setName] = useState("");
+  const [breed, setBreed] = useState("");
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
 
-  const navigate = useNavigate();
-
-  const upload = async () => {
-    try {
-      const formData = new FormData();
-      formData.append("file", file);
-      const res = await axios.post("/upload", formData);
-      return res.data;
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handleClick = async (e) => {
-    e.preventDefault();
-    const imgUrl = await upload();
-
-    try {
-      state
-        ? await axios.put(`/posts/${state.id}`, {
-            title,
-            desc: value,
-            cat,
-            img: file ? imgUrl : "",
-          })
-        : await axios.post(`/posts/`, {
-            title,
-            desc: value,
-            cat,
-            img: file ? imgUrl : "",
-            date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
-          });
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Do something with the form data, such as sending it to a server or updating state in a parent component
   };
 
   return (
-    <div className="add">
-      <div className="content">
+    <form className="form" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <h1>Are you looking to sell your cat?</h1>
+        <h3>
+          Well, you've come to the right place! We specialice in selling all
+          kinds of kitties!
+          <br />
+        </h3>
+        <h5>
+          We ensure that your cat will be in good hands in its future forever
+          home!
+        </h5>
+        <label htmlFor="name">Name:</label>
         <input
           type="text"
-          placeholder="Title"
-          onChange={(e) => setTitle(e.target.value)}
+          id="name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
         />
-        <div className="editorContainer">
-          <ReactQuill
-            className="editor"
-            theme="snow"
-            value={value}
-            onChange={setValue}
-          />
-        </div>
       </div>
-      <div className="menu">
-        <div className="item">
-          <h1>Publish</h1>
-          <input
-            style={{ display: "none" }}
-            type="file"
-            id="file"
-            name=""
-            onChange={(e) => setFile(e.target.files[0])}
-          />
-          <label className="file" htmlFor="file">
-            Upload Image
-          </label>
-          <div className="buttons">
-            <button onClick={handleClick}>Publish</button>
-          </div>
-        </div>
-        <div className="item">
-          <h1>Category</h1>
-          <div className="cat">
-            <input
-              type="radio"
-              checked={cat === "race"}
-              name="cat"
-              value="race"
-              id="race"
-              onChange={(e) => setCat(e.target.value)}
-            />
-            <label htmlFor="race">Race pure</label>
-          </div>
-          <div className="cat">
-            <input
-              type="radio"
-              checked={cat === "street"}
-              name="cat"
-              value="street"
-              id="street"
-              onChange={(e) => setCat(e.target.value)}
-            />
-            <label htmlFor="street">Street cat</label>
-          </div>
-        </div>
+      <div className="form-group">
+        <label htmlFor="breed">Breed:</label>
+        <input
+          type="text"
+          id="breed"
+          value={breed}
+          onChange={(event) => setBreed(event.target.value)}
+        />
       </div>
-    </div>
+      <div className="form-group">
+        <label htmlFor="gender">Gender:</label>
+        <select
+          id="gender"
+          value={gender}
+          onChange={(event) => setGender(event.target.value)}
+        >
+          <option value=""></option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          value={age}
+          onChange={(event) => setAge(event.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="price">Price:</label>
+        <input
+          type="number"
+          id="price"
+          value={price}
+          onChange={(event) => setPrice(event.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
+      </div>
+      <button type="submit" className="form-submit">
+        Sell Cat
+      </button>
+    </form>
   );
-};
-
-/* const PostPage = () => {
-  return <div>Hi</div>;
-}; */
+}
 
 export default PostPage;
