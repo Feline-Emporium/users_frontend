@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./PostPage.scss";
+import { useAuth } from "../../contexts/AuthContext";
 
 import sellcat from "../../assets/mp3/sellcat.mp3";
 
@@ -12,6 +13,8 @@ function PostPage() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
+  const { currentUser } = useAuth();
+
   const sellkitty = () => {
     const audio = new Audio(sellcat);
     audio.play();
@@ -22,12 +25,13 @@ function PostPage() {
 
     await axios
       .post("http://localhost:3001/post", {
-        "Name:": name,
-        "Breed:": breed,
-        "Gender:": gender,
-        "Age:": age,
-        "Price:": price,
-        "Description:": description,
+        userId: currentUser.uid,
+        name: name,
+        breed: breed,
+        gender: gender,
+        age: age,
+        price: price,
+        description: description,
       })
       .then((response) => {
         console.log(response);
