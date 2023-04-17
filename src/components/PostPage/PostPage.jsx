@@ -21,8 +21,6 @@ function PostPage() {
   };
 
   const handleSellCat = async (event) => {
-    event.preventDefault();
-
     await axios
       .post("http://localhost:3001/post", {
         userId: currentUser.uid,
@@ -45,7 +43,7 @@ function PostPage() {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form">
       <div className="form-group">
         <h1>Are you looking to sell your cat?</h1>
         <h3>
