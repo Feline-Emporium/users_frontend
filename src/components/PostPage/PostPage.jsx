@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./PostPage.scss";
+
 import sellcat from "../../assets/mp3/sellcat.mp3";
 
 function PostPage() {
@@ -15,32 +17,27 @@ function PostPage() {
     audio.play();
   };
 
-  const handleSubmit = (event) => {
+  const handleSellCat = async (event) => {
     event.preventDefault();
-    // Do something with the form data, such as sending it to a server or updating state in a parent component
-  };
 
-  const handleSellCat = () => {
-    console.log(
-      "Name:",
-      name,
-      "Breed:",
-      breed,
-      "Gender:",
-      gender,
-      "Age:",
-      age,
-      "Price:",
-      price,
-      "Description:",
-      description
-    );
-    setName("");
-    setBreed("");
-    setGender("");
-    setAge("");
-    setPrice("");
-    setDescription("");
+    await axios
+      .post("http://localhost:3001/post", {
+        "Name:": name,
+        "Breed:": breed,
+        "Gender:": gender,
+        "Age:": age,
+        "Price:": price,
+        "Description:": description,
+      })
+      .then((response) => {
+        console.log(response);
+        setName("");
+        setBreed("");
+        setGender("");
+        setAge("");
+        setPrice("");
+        setDescription("");
+      });
   };
 
   return (
