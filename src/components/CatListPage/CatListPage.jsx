@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./CatListPage.scss";
-import CatData from "../CatListPage/CataData.json";
 
 function CatListPage() {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
-    setCats(CatData);
+    getCatList();
   }, []);
 
-  const deleteCat = (catId) => {
-    // Implement the delete cat functionality here
-  };
-
+  async function getCatList() {
+    await axios.get("http://localhost:3001/post/getall").then((response) => {
+      setCats(response.data);
+    });
+  }
   const rows = [];
   for (let i = 0; i < cats.length; i += 3) {
     rows.push(
@@ -25,15 +26,7 @@ function CatListPage() {
               <p>Gender: {cat.gender}</p>
               <p>Age: {cat.age}</p>
               <p>{cat.description}</p>
-              <p>{`DKK ${cat.price}`}</p>
-              <p>Id: {cat.id}</p>
-              <button
-                className="delete-button"
-                //onClick={() => deleteCat(cat.id)}
-                onClick={() => console.log("Kitty was deleted!")}
-              >
-                Delete
-              </button>
+              <p>{`DKK: ${cat.price}`}</p>
             </div>
           </div>
         ))}

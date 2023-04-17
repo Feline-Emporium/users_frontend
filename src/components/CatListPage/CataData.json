@@ -1,144 +1,159 @@
 [
-    {
+  {
     "id": 1,
     "name": "Simba",
     "breed": "Persian",
     "gender": "Male",
     "age": "1",
     "price": 1500,
-    "description": "Simba is a beautiful Persian cat with long, silky fur and big, expressive eyes. He loves to play with toys and cuddle up with his human companions. He is up-to-date on all his vaccinations and is ready to find his forever home."
-    },
-    
-    {
+    "description": "Simba is a beautiful Persian cat with long, silky fur and big, expressive eyes. He loves to play with toys and cuddle up with his human companions. He is up-to-date on all his vaccinations and is ready to find his forever home.",
+    "sold": false
+  },
+
+  {
     "id": 2,
     "name": "Luna",
     "breed": "Siamese",
     "gender": "Female",
     "age": "5",
     "price": 1200,
-    "description": "Luna is a stunning Siamese cat with sleek, dark fur and piercing blue eyes. She is an intelligent and curious cat who loves to explore her surroundings. She is litter box trained and has all of her vaccinations up-to-date."
-    },
-    
-    {
+    "description": "Luna is a stunning Siamese cat with sleek, dark fur and piercing blue eyes. She is an intelligent and curious cat who loves to explore her surroundings. She is litter box trained and has all of her vaccinations up-to-date.",
+    "sold": false
+  },
+
+  {
     "id": 3,
     "name": "Mittens",
     "breed": "Maine Coon",
     "gender": "Male",
     "age": "10",
     "price": 1800,
-    "description": "Mittens is a majestic Maine Coon with a fluffy, long coat and tufted ears. He is a gentle giant who loves to snuggle up with his family and relax. He has been neutered and is up-to-date on all his vaccinations."
-    },
-    
-    {
+    "description": "Mittens is a majestic Maine Coon with a fluffy, long coat and tufted ears. He is a gentle giant who loves to snuggle up with his family and relax. He has been neutered and is up-to-date on all his vaccinations.",
+    "sold": false
+  },
+
+  {
     "id": 4,
     "name": "Oreo",
     "breed": "American Shorthair",
     "gender": "Male",
     "age": "3",
     "price": 800,
-    "description": "Oreo is a playful and friendly American Shorthair with soft, black and white fur. She loves to chase toys and curl up on laps for naps. She is litter box trained and has had all her vaccinations."
-    },
-    
-    {
+    "description": "Oreo is a playful and friendly American Shorthair with soft, black and white fur. She loves to chase toys and curl up on laps for naps. She is litter box trained and has had all her vaccinations.",
+    "sold": false
+  },
+
+  {
     "id": 5,
     "name": "Smokey",
     "breed": "Scottish Fold",
     "gender": "Female",
     "age": "3",
     "price": 2500,
-    "description": "Smokey is a rare and beautiful Scottish Fold with a distinctive folded ear and soft grey fur. He is a calm and affectionate cat who loves to be petted and snuggle up with his owners. He is up-to-date on all his vaccinations."
-    },
-    
-    {
+    "description": "Smokey is a rare and beautiful Scottish Fold with a distinctive folded ear and soft grey fur. He is a calm and affectionate cat who loves to be petted and snuggle up with his owners. He is up-to-date on all his vaccinations.",
+    "sold": false
+  },
+
+  {
     "id": 6,
     "name": "Bella",
     "breed": "Bengal",
     "gender": "Female",
     "age": "14",
     "price": 2000,
-    "description": "Bella is a gorgeous Bengal cat with soft, brown and black fur and striking green eyes. She is an energetic and playful cat who loves to run, jump and play with her toys. She is litter box trained and has all of her vaccinations up-to-date."
-    },
-    
-    {
+    "description": "Bella is a gorgeous Bengal cat with soft, brown and black fur and striking green eyes. She is an energetic and playful cat who loves to run, jump and play with her toys. She is litter box trained and has all of her vaccinations up-to-date.",
+    "sold": false
+  },
+
+  {
     "id": 7,
     "name": "Felix",
     "breed": "Russian Blue",
     "gender": "Male",
     "age": "9",
     "price": 1500,
-    "description": "Felix is a handsome Russian Blue with sleek, grey fur and bright, green eyes. He is a quiet and independent cat who enjoys spending time alone and observing his surroundings. He is neutered and has all his vaccinations up-to-date."
-    },
-    
-    {
+    "description": "Felix is a handsome Russian Blue with sleek, grey fur and bright, green eyes. He is a quiet and independent cat who enjoys spending time alone and observing his surroundings. He is neutered and has all his vaccinations up-to-date.",
+    "sold": false
+  },
+
+  {
     "id": 8,
     "name": "Salem",
     "breed": "Sphynx",
     "gender": "Male",
     "age": "5",
     "price": 3000,
-    "description": "Salem is a unique and stunning Sphynx cat with hairless skin and big, expressive eyes. He is a social and affectionate cat who loves to be around people and get lots of attention. He is litter box trained and has had all his vaccinations."
-    },
-    {
-        "id": 9,
-        "name": "Whiskers",
-        "breed": "British Shorthair",
-        "gender": "Male",
-        "age": "2",
-        "price": 1200,
-        "description": "Whiskers is a handsome British Shorthair with soft, grey fur and big, round eyes. He is a curious and playful cat who loves to explore his surroundings and play with toys. He is neutered and has all his vaccinations up-to-date."
-        },
-        {
-        "id": 10,
-        "name": "Cleo",
-        "breed": "Egyptian Mau",
-        "gender": "Female",
-        "age": "4",
-        "price": 1800,
-        "description": "Cleo is a beautiful Egyptian Mau with sleek, spotted fur and bright, green eyes. She is a playful and energetic cat who loves to run and climb. She is litter box trained and has had all her vaccinations."
-        },
-        {
-        "id": 11,
-        "name": "Gizmo",
-        "breed": "Exotic Shorthair",
-        "gender": "Male",
-        "age": "6",
-        "price": 2000,
-        "description": "Gizmo is a charming Exotic Shorthair with soft, cream-colored fur and big, round eyes. He is a friendly and affectionate cat who loves to be petted and cuddled. He is up-to-date on all his vaccinations and has been neutered."
-        },
-        {
-        "id": 12,
-        "name": "Muffin",
-        "breed": "Ragdoll",
-        "gender": "Female",
-        "age": "1",
-        "price": 1500,
-        "description": "Muffin is a beautiful Ragdoll with soft, fluffy fur and big, blue eyes. She is a gentle and affectionate cat who loves to be held and cuddled. She is litter box trained and has had all her vaccinations."
-        },
-        {
-        "id": 13,
-        "name": "Boots",
-        "breed": "Himalayan",
-        "gender": "Male",
-        "age": "8",
-        "price": 1000,
-        "description": "Boots is a regal Himalayan with long, fluffy fur and bright, blue eyes. He is a calm and affectionate cat who loves to be petted and snuggle up with his owners. He is up-to-date on all his vaccinations."
-        },
-        {
-        "id": 14,
-        "name": "Jasper",
-        "breed": "Norwegian Forest Cat",
-        "gender": "Male",
-        "age": "7",
-        "price": 1800,
-        "description": "Jasper is a majestic Norwegian Forest Cat with long, fluffy fur and piercing green eyes. He is an intelligent and independent cat who loves to explore his surroundings. He is neutered and has all his vaccinations up-to-date."
-        },
-        {
-        "id": 15,
-        "name": "Angel",
-        "breed": "Persian",
-        "gender": "Female",
-        "age": "3",
-        "price": 2200,
-        "description": "Angel is a beautiful Persian cat with soft, white fur and big, blue eyes. She is a gentle and loving cat who loves to be held and cuddled. She is litter box trained and has had all her vaccinations."
-        }
-    ]
+    "description": "Salem is a unique and stunning Sphynx cat with hairless skin and big, expressive eyes. He is a social and affectionate cat who loves to be around people and get lots of attention. He is litter box trained and has had all his vaccinations.",
+    "sold": false
+  },
+  {
+    "id": 9,
+    "name": "Whiskers",
+    "breed": "British Shorthair",
+    "gender": "Male",
+    "age": "2",
+    "price": 1200,
+    "description": "Whiskers is a handsome British Shorthair with soft, grey fur and big, round eyes. He is a curious and playful cat who loves to explore his surroundings and play with toys. He is neutered and has all his vaccinations up-to-date.",
+    "sold": false
+  },
+  {
+    "id": 10,
+    "name": "Cleo",
+    "breed": "Egyptian Mau",
+    "gender": "Female",
+    "age": "4",
+    "price": 1800,
+    "description": "Cleo is a beautiful Egyptian Mau with sleek, spotted fur and bright, green eyes. She is a playful and energetic cat who loves to run and climb. She is litter box trained and has had all her vaccinations.",
+    "sold": false
+  },
+  {
+    "id": 11,
+    "name": "Gizmo",
+    "breed": "Exotic Shorthair",
+    "gender": "Male",
+    "age": "6",
+    "price": 2000,
+    "description": "Gizmo is a charming Exotic Shorthair with soft, cream-colored fur and big, round eyes. He is a friendly and affectionate cat who loves to be petted and cuddled. He is up-to-date on all his vaccinations and has been neutered.",
+    "sold": false
+  },
+  {
+    "id": 12,
+    "name": "Muffin",
+    "breed": "Ragdoll",
+    "gender": "Female",
+    "age": "1",
+    "price": 1500,
+    "description": "Muffin is a beautiful Ragdoll with soft, fluffy fur and big, blue eyes. She is a gentle and affectionate cat who loves to be held and cuddled. She is litter box trained and has had all her vaccinations.",
+    "sold": false
+  },
+  {
+    "id": 13,
+    "name": "Boots",
+    "breed": "Himalayan",
+    "gender": "Male",
+    "age": "8",
+    "price": 1000,
+    "description": "Boots is a regal Himalayan with long, fluffy fur and bright, blue eyes. He is a calm and affectionate cat who loves to be petted and snuggle up with his owners. He is up-to-date on all his vaccinations.",
+    "sold": false
+  },
+  {
+    "id": 14,
+    "name": "Jasper",
+    "breed": "Norwegian Forest Cat",
+    "gender": "Male",
+    "age": "7",
+    "price": 1800,
+    "description": "Jasper is a majestic Norwegian Forest Cat with long, fluffy fur and piercing green eyes. He is an intelligent and independent cat who loves to explore his surroundings. He is neutered and has all his vaccinations up-to-date.",
+    "sold": false
+  },
+  {
+    "id": 15,
+    "name": "Angel",
+    "breed": "Persian",
+    "gender": "Female",
+    "age": "3",
+    "price": 2200,
+    "description": "Angel is a beautiful Persian cat with soft, white fur and big, blue eyes. She is a gentle and loving cat who loves to be held and cuddled. She is litter box trained and has had all her vaccinations.",
+    "sold": false
+  }
+]

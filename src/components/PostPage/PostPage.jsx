@@ -47,7 +47,7 @@ function PostPage() {
       <div className="form-group">
         <h1>Are you looking to sell your cat?</h1>
         <h3>
-          Well, you've come to the right place! We specialice in selling all
+          Well, you've come to the right place! We specialize in selling all
           kinds of kitties!
           <br />
         </h3>
@@ -79,7 +79,6 @@ function PostPage() {
           value={gender}
           onChange={(event) => setGender(event.target.value)}
         >
-          <option value=""></option>
           <option value="male">Male</option>
           <option value="female">Female</option>
           <option value="other">Other</option>
