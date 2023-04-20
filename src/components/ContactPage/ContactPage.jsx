@@ -61,9 +61,6 @@ const ContactPage = () => {
           requests, please contact the website owner.
         </p>
       </div>
-      <div className="footer">
-        Created, Maintained and Managed by Feline Emporium Co.
-      </div>
     </div>
   );
 };

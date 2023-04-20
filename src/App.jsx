@@ -4,6 +4,7 @@ import "./App.css";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import StartPage from "./components/HomePage/HomePage";
 import LoginPage from "./components/UserAuth/LoginPage";
@@ -19,7 +20,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <NavBar />
-          <Container maxWidth="md">
+          <div className="Main">
             <Routes>
               <Route path="/" element={<StartPage />} />
               <Route path="/login" element={<LoginPage />} />
@@ -30,7 +31,8 @@ function App() {
               <Route path="/catlist" element={<CatListPage />} />
               <Route path="/*" element={<ErrorPage />} />
             </Routes>
-          </Container>
+          </div>
+          <Footer />
         </div>
       </BrowserRouter>
     </AuthProvider>

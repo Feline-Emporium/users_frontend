@@ -58,8 +58,9 @@ button:focus-visible {
   height: 100%;
   display: flex;
   flex-direction: column;
-  }
-  
-  .Container {
+  min-height: 100vh;
+}
+
+.Main {
   flex: 1;
-  }
+}

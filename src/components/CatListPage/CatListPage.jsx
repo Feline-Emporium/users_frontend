@@ -10,9 +10,15 @@ function CatListPage() {
   }, []);
 
   async function getCatList() {
-    await axios.get("http://localhost:3001/post/getall").then((response) => {
-      setCats(response.data);
-    });
+    await axios
+      .get("http://localhost:3001/post/getall", {
+        headers: {
+          authorization: "user",
+        },
+      })
+      .then((response) => {
+        setCats(response.data);
+      });
   }
   const rows = [];
   for (let i = 0; i < cats.length; i += 3) {

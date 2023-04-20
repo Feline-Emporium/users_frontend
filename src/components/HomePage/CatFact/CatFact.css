@@ -1,11 +1,12 @@
-.catFactContainer {
+/* .catFactContainer {
   background-color: #3B719F;
   position: absolute;
   left: 0px;
   width: 100%;
   margin-top: 50px;
   color: white;
-}
+  margin-bottom: 200px;
+} */
 
 .catFactCard {
   display: flex;

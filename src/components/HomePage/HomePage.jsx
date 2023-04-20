@@ -21,9 +21,7 @@ export default function HomePage() {
       </a>
       <Typography variant="h3">Welcome to One-Stop CatShop</Typography>
       <Typography variant="h4">Your portal for everything cats!</Typography>
-      <div>
-        <CatFact />
-      </div>
+      <CatFact />
     </div>
   );
 }
