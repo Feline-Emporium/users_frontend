@@ -6,7 +6,6 @@ import meow from "../../assets/mp3/meow.mp3";
 import meownibba from "../../assets/mp3/meownibba.mp3";
 
 import { useAuth } from "../../contexts/AuthContext";
-import auth from "../../config/firebase";
 import catLogo from "../../assets/cat.png";
 
 export default function Navbar() {

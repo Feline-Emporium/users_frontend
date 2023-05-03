@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { Button } from "@mui/material";
 import "../CatListPage/CatListPage.scss";
 
@@ -54,15 +54,15 @@ function ProfilePage() {
   return (
     <div>
       ProfilePage for: {currentUser.email}
+      <h2>Your Cats</h2>
       <div className="cat-list-page">{rows}</div>
-      <Button
-        variant="contained"
-        color="error"
-        className="formButton"
+      <button
+        className="button"
+        style={{ backgroundColor: "red" }}
         onClick={() => handleSubmit()}
       >
         Log Out
-      </Button>
+      </button>
     </div>
   );
 }

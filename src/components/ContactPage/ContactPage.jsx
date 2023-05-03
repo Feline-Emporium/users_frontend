@@ -4,7 +4,7 @@ import "./ContactPage.scss";
 
 const ContactPage = () => {
   return (
-    <div>
+    <div className="contactpage">
       <h1>Contact page</h1>
       <br />
       <h4>Feel free to get in touch with us at: </h4>

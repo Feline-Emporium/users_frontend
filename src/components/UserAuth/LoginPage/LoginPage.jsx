@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import "./LoginPage.css";
 
 import FormTemplate from "../FormTemplate/FormTemplate";
 

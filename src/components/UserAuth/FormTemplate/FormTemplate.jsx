@@ -67,9 +67,7 @@ export default function FormTemplate(props) {
         />
         <br />
         <br />
-        <Button type="submit" variant="contained" className="formButton">
-          Log in
-        </Button>
+        <button className="button">Log in</button>
       </form>
 
       {loading && <p>Loading...</p>}

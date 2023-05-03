@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./PostPage.scss";
 import { useAuth } from "../../contexts/AuthContext";
@@ -6,6 +7,9 @@ import { useAuth } from "../../contexts/AuthContext";
 import sellcat from "../../assets/mp3/sellcat.mp3";
 
 function PostPage() {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [gender, setGender] = useState("");
@@ -13,7 +17,11 @@ function PostPage() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
-  const { currentUser } = useAuth();
+  useEffect(() => {
+    if (!currentUser) {
+      navigate("/login");
+    }
+  }, []);
 
   const sellkitty = () => {
     const audio = new Audio(sellcat);
