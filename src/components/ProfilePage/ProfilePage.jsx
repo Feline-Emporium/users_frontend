@@ -51,10 +51,14 @@ function ProfilePage() {
     );
   }
 
+  const throwUnkownError = () => {
+    throw new Error("This is an unknown error waiting to be caught by Sentry");
+  };
+
   return (
     <div>
-      ProfilePage for: {currentUser.email}
-      <h2>Your Cats</h2>
+      Hi fabulous ✨{currentUser.email}✨! <br /> Hope you have an amazing day!
+      <h2>Your Cats For Sale</h2>
       <div className="cat-list-page">{rows}</div>
       <button
         className="button"
@@ -63,6 +67,7 @@ function ProfilePage() {
       >
         Log Out
       </button>
+      <button onClick={throwUnkownError}>Dont click</button>
     </div>
   );
 }
