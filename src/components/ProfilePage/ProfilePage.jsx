@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Button } from "@mui/material";
+import "./ProfilePage.css";
 import "../CatListPage/CatListPage.scss";
 
 import { useAuth } from "../../contexts/AuthContext";
@@ -57,8 +57,17 @@ function ProfilePage() {
 
   return (
     <div>
-      Hi fabulous ✨{currentUser.email}✨! <br /> Hope you have an amazing day!
-      <h2>Your Cats For Sale</h2>
+      <h1>
+        😳Hi Fabulous😳 <br />
+      </h1>
+      <h3>
+        or should I call you <br />
+      </h3>
+      <h1 className="text">✨{currentUser.email}✨</h1>
+      <h4>I personally hope you have a pawsome day!</h4>
+      <br />
+      <br />
+      <h2>You can find your cats for sale below here</h2>
       <div className="cat-list-page">{rows}</div>
       <button
         className="button"

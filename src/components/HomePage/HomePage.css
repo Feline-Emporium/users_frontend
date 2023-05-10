@@ -1,17 +1,17 @@
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 10em;
+  padding: 3em;
   will-change: filter;
   transition: filter 300ms;
 }
 
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -19,4 +19,34 @@
   a:nth-of-type(1) .logo {
     animation: logo-spin infinite 5s linear;
   }
+}
+
+.zoom-in-out-box {
+  padding-bottom: 4em;
+  height: 15em;
+  animation: zoom-in-zoom-out 5s ease infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.textshake{
+  animation: tilt-shaking 20s ease infinite;
+}
+
+@keyframes tilt-shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
 }

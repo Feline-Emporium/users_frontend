@@ -6,6 +6,7 @@ import "./HomePage.css";
 
 import { useAuth } from "../../contexts/AuthContext";
 import catLogo from "../../assets/cat.png";
+import cat3 from "../../assets/cat3.png";
 import CatFact from "./CatFact/CatFact";
 
 export default function HomePage() {
@@ -19,14 +20,18 @@ export default function HomePage() {
     <div className="homePageContainer">
       <CookieConsentForm />
       <a target="_blank">
-        <img src={catLogo} className="logo" alt="Cat Logo" />
+        <img src={cat3} className="zoom-in-out-box" alt="Cat Logo" />
       </a>
-      <Typography variant="h3">Welcome to One-Stop CatShop</Typography>
-      <Typography variant="h4">Your portal for everything cats!</Typography>
+      <br />
       <br />
       <button onClick={() => handleOnClick("catlist")} className="button">
         See available cats
       </button>
+      <br />
+      <br />
+      <Typography variant="h5" className="textshake">
+        Welcome to your one-stop catshop! Your portal for everything cats!
+      </Typography>
       <br />
       <CatFact />
     </div>
